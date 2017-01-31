@@ -4,38 +4,46 @@
   "description": "tells you where the closest farmers markets are in your area",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --ignore node_modules server/server.js",
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arraylikealligators/farmers-market-app.git"
   },
+
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/arraylikealligators/farmers-market-app/issues"
   },
+
   "homepage": "https://github.com/arraylikealligators/farmers-market-app#readme",
   "devDependencies": {
     "async": "^2.1.4",
     "chai": "^3.5.0",
     "lodash": "^4.17.4",
     "mocha": "^3.2.0",
-    "morgan": "^1.7.0",
     "node-dir": "^0.1.16",
     "nodemon": "^1.11.0",
     "browser-sync": "^2.18.6",
     "gulp": "^3.9.1"
+
   },
+
   "dependencies": {
     "async": "^2.1.4",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.16.0",
     "express": "^4.14.0",
+    "express-session": "^1.15.0",
+    "jwt-simple": "^0.5.1",
     "mongoose": "^4.7.8",
     "path": "^0.12.7",
     "q": "^1.4.1",
     "request": "^2.79.0",
-    "request-promise": "^4.1.1"
+    "request-promise": "^4.1.1",
+    "morgan": "^1.7.0"
   }
 }

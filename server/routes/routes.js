@@ -2,19 +2,20 @@ var serverRoutes = require('express').Router();
 var marketController = require('../controllers/marketController');
 
 
-
+// invoked to make query to DB
 serverRoutes.route('/api/search')
-.get(/* [,some middleware] */ (req, res) => {
-  // invoke marketController.getRadiusMarkets to make query to DB
+.get((req, res) => {
   marketController.getLocationMarkets(req, res);
 });
 
+// invoke to add a new market to DB
 serverRoutes.route('/api/create')
-.post(/* [,some middleware] */ (req, res) => {
+.post((req, res) => {
   // invoke marketController.createMarket to add a new market to DB
   marketController.createMarket(req, res);
 });
 
+//invoked to return a market to display to admin prior to update or edits
 serverRoutes.route('/api/getOne')
 .post((req,res) => {
 
@@ -22,20 +23,21 @@ serverRoutes.route('/api/getOne')
 
 });
 
+//invoked to update an existing market
 serverRoutes.route('/api/update')
 .put((req,res)=>{
 
 	marketController.updateOne(req, res);	
 });
 
+//invoked to delete an existing market
 serverRoutes.route('/api/delete')
 .put((req,res)=>{
-	console.log("in serverRoutes at delete");
 	console.log(req.body, "obj in routes");
 	marketController.delete(req,res);
 });
 
-
+//invoked to add a new farm
 serverRoutes.route('/api/add')
 .put((req,res)=>{
 	marketController.addMarket(req,res);

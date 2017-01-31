@@ -1,16 +1,21 @@
-<div class="logo logo-small">
-      City Sprout
-</div>
+<div class="adminform">
+  <div class="logo logo-small">
+    City Sprout
+  </div>
 
+  <div>
+    <h2>Welcome, Admin!</h2>
+  </div>
 
-<div><h2>Welcome, Admin!</h2></div>
+<!--initial 'Enter Farm ID' form -->
 
-                        <!--initial 'Enter Farm ID' form -->
-
-<form ng-submit = "retrieveMarket()">
+<form ng-submit = "retrieveMarket()" layout="column">
     <h3>Update an existing market</h3>
-    <h4 class = welcome >Enter Farm ID</h4>
-    <input type="text" placeholder= "id" ng-model="marketID">
+    <md-input-container>
+      <label>Enter Farm ID</label>
+      <h4 class = welcome >Enter Farm ID</h4>
+      <input type="text" placeholder= "id" ng-model="marketID">
+    </md-input-container>
     <br>
     <div class= alertbox ng-show ="alertView === true">Please enter a valid Farm ID</div>
     <br />
@@ -26,14 +31,16 @@
   c-2.3-2.7-6.2-2.7-8.6-0.1c-1.9,2.1-2,5.6-0.1,7.7l17.6,20.3c0.2,0.3,0.4,0.6,0.6,0.9c1.8,2,4.4,2.5,6.6,1.4c0.7-0.3,1.4-0.8,2-1.5
   c0.3-0.3,0.5-0.6,0.7-0.9l46.3-50.1C427.7,57.5,427.7,54.2,425.9,52.1z"/>
 <circle class="path" fill="none" stroke="#7DB0D5" stroke-width="4" stroke-miterlimit="10" cx="80.6" cy="80.6" r="62.1"/>
-<polyline class="path" fill="none" stroke="#7DB0D5" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="113,52.8 
+<polyline class="path" fill="none" stroke="#7DB0D5" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="113,52.8
   74.1,108.4 48.2,86.4 "/>
 
 <circle class="spin" fill="none" stroke="#7DB0D5" stroke-width="4" stroke-miterlimit="10" stroke-dasharray="12.2175,12.2175" cx="80.6" cy="80.6" r="73.9"/>
 
 </svg>
+
   
 <p>Success!</p>
+
 </div>
 
 
@@ -47,14 +54,14 @@
       <!-- editable farm name -->
       <span class="editKey">Farm Name </span>
       <span editable-textarea="singleObj.data.Name" e-name="Name" e-required><li>{{ singleObj.data.Name || 'empty' }}</li></span>
-    </div> 
+    </div>
     <br />
     <div>
       <!-- editable address  -->
       <span class="editKey">Address </span>
       <span editable-textarea="singleObj.data.Address" e-name="Address" e-required><li>{{ singleObj.data.Address || 'empty' }}</li></span>
     </div>
-    <br /> 
+    <br />
     <div>
       <!-- editable coordinates  -->
       <span class="editKey">Longitude Coordinate </span>
@@ -70,24 +77,24 @@
       <span class="editKey">Products </span>
       <span editable-textarea="singleObj.data.Products" e-name="Products" e-required><li>{{ singleObj.data.Products || 'empty' }}</li></span>
     </div>
-    <br /> 
+    <br />
     <div>
       <!-- editable schedule  -->
       <span class="editKey">Schedule </span>
       <span editable-textarea="singleObj.data.Schedule" e-name="Schedule" e-required><li>{{ singleObj.data.Schedule || 'empty' }}</li></span>
-    </div> 
+    </div>
     <br />
     <div>
       <!-- editable GoogleLink  -->
       <span class="editKey">GoogleLink </span>
       <span editable-textarea="singleObj.data.GoogleLink" e-name="GoogleLink" e-required><li>{{ singleObj.data.GoogleLink || 'empty' }}</li></span>
-    </div> 
+    </div>
     <br />
     <div>
     <!-- non-editable ID  -->
       <span class="editKey">ID </span>
       <span><li>{{ singleObj.data._id}}</li></span>
-    </div> 
+    </div>
 
                        <!-- button to show form -->
     <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">

@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
-
-
+//creates schema for geoJSON database objec
 var market = new mongoose.Schema({
   Address: String,
   GoogleLink: String,
